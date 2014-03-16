@@ -12,7 +12,13 @@ Retrograde is a small Clojure DSL that deals with the problem of accessing infor
 
 The main motivation for retrograde was the observation that in tricky cases, when a calculation requires access to previous iterations, Clojure programmers (the author at least!) tend to resort to using `loop`/`recur`, therefore losing laziness. Even if one sticks to `lazy-seq`, handling the passing of various bits of "state" to the next iteration is awkward at best, with the most horrific cases including use of real state such as atoms etc.
 
-## Access to previous results
+## Installation
+
+Soon to be published to clojars.
+
+## Usage
+
+### Access to previous results
 
 Retrograde allows access to the results of previous iterations using the "prime" syntax. For example, here is an infinite list of Fibonacci numbers:
 
@@ -26,9 +32,9 @@ The optional `1` value after the name of the result is the value of `x'` during 
 
 The code produced by the macro uses `lazy-seq` to make sure that the calculation happens in a lazy manner, without you having to handle the passing of "state" to the next iteration.
 
-## Accumulators
+### Accumulators
 
-### Sum of all odd numbers so far
+#### Sum of all odd numbers so far
 
 Retrograde also supports access to previous iterations via accumulators. Let's look into the (made up) problem of lazily transforming a sequence of numbers so that each output element is the input number added to all the odd numbers that have occurred in the sequence so far:
 
@@ -46,7 +52,7 @@ We then go on to name our result (`x`) and to provide the code for calculating i
 
 Finally, notice that in this example `x` is not initialised to any value, so in the first iteration the value of `x'` is `nil`. In a real-world situation the accumulator would probably hold the sum of the odd numbers so far, rather than a vector of the odd numbers.
 
-### Sliding windows
+#### Sliding windows
 
 Let's have a look at how you would implement a sliding window of 5 elements (if somehow Rich Hickey decided to steal `partition` from you out of spite):
 
