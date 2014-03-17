@@ -14,7 +14,11 @@ The main motivation for retrograde was the observation that in tricky cases, whe
 
 ## Installation
 
-Soon to be published to clojars.
+Available from clojars, put this in your `project.clj` dependencies:
+
+```
+[retrograde "0.9"]
+```
 
 ## Usage
 
