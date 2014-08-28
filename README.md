@@ -17,7 +17,7 @@ The main motivation for retrograde was the observation that in tricky cases, whe
 Available from clojars, put this in your `project.clj` dependencies:
 
 ```
-[retrograde "0.9"]
+[retrograde "0.10"]
 ```
 
 ## Usage
