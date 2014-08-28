@@ -21,7 +21,7 @@
   (and (symbol? s) (.endsWith (name s) "'")))
 
 (defn- dec-prime [s]
-  (if-not (> (count (name s)) 1)
+  (if-not (= \' (last (name s)))
     s
     (symbol (apply str (butlast (name s))))))
 
